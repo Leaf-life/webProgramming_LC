@@ -25,8 +25,19 @@ sequenceDiagram
     actor HomePage
     actor signIn
     actor getAuth
+    actor startGamePage
+    actor single
+    actor multi
+    actor gameloop
+    actor gameOver
     HomePage->>signIn: signin
-    signIn->>getAuth: logined in
+    signIn->>getAuth: check if have account if not prompt to create account
+    getAuth->>HomePage: return login
+    startGamePage->>single: play single player
+    startGamePage->>multi: play mutli player
+    single->>gameloop: play game
+    gameloop->>gameOver: record high score
+
 ```
 
 ### Key features
