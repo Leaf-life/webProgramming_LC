@@ -2,7 +2,7 @@
 
 [My Notes](notes.md)
 
-a website to host a 50/50 chanch game to play with your friends
+a website to host a 80/20 chanch game to play with your friends
 
 > [!NOTE]
 > This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
@@ -12,7 +12,7 @@ a website to host a 50/50 chanch game to play with your friends
 
 ### Elevator pitch
 
-a 50/50 chance game to play with friends. IT will be hosted a website where their is a single player and mutiple player mode. in Single player their is a score board to complete for the highest score, for mutiple player you play with your freinds to complete to see who can last the longest. in single player their will also be rewards depending on how long you last.
+a 80/20 chance game to play with friends. IT will be hosted a website where their is a single player and mutiple player mode. in Single player their is a score board to complete for the highest score, for mutiple player you play with your freinds to complete to see who can last the longest. in single player their will also be rewards depending on how long you last.
 
 ### Design
 
@@ -37,12 +37,12 @@ sequenceDiagram
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - use to structure the website and orgainze the elements
+- **CSS** - added the design and look of the website
+- **React** - routing to the different player modes
+- **Service** - different endpoints to the different pages detmereing their functionality and the elements they should have
+- **DB/Login** - used for scoreboard in single player mode
+- **WebSocket** - mutiplePlay feature for the 80/20 game
 
 ## 🚀 Specification Deliverable
 
