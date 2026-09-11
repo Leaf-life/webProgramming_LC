@@ -25,7 +25,8 @@ sequenceDiagram
     actor HomePage
     actor signIn
     actor getAuth
-    HomePage->>signIn->>getAuth
+    HomePage->>signIn: signin
+    signIn->>getAuth: logined in
 ```
 
 ### Key features
