@@ -29,9 +29,10 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- mutiple player mode where mutple player (max 3) can player the 80/20 game.
+- simgle player mode where you try to get the high score and get rewards when you get certain milezones.
+- 80/20 game with two buttons. one button is rendomly choosen as the correct button while the other one is choose as the wrong one.
+- score board for single player mode to see who has the highest score.
 
 ### Technologies
 
