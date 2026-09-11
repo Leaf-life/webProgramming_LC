@@ -22,9 +22,11 @@ Design image is a rough flow diagram of what the page flow and game loop will lo
 
 ```mermaid
 sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
+    actor HomePage
+    actor signIn
+    actor getAuth
+    HomePage->>signIn
+    signIn->>getAuth
 ```
 
 ### Key features
