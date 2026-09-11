@@ -30,11 +30,16 @@ sequenceDiagram
     actor multi
     actor gameloop
     actor gameOver
+    actor waitPlayers
+    actor winner
     HomePage->>signIn: signin
     signIn->>getAuth: check if have account if not prompt to create account
     getAuth->>HomePage: return login
     startGamePage->>single: play single player
     startGamePage->>multi: play mutli player
+    multi->>waitPlayers: wait for all players
+    waitPlayers->>gameloop: playgame
+    gameloop->>winner: show who ever won the game
     single->>gameloop: play game
     gameloop->>gameOver: record high score
 
@@ -65,12 +70,12 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Git commit requirement)
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology including your 3rd party API and use of WebSocket
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] I completed the prerequisites for this deliverable (Git commit requirement)
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology including your 3rd party API and use of WebSocket
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ## 🚀 AWS deliverable
 
