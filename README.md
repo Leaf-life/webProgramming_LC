@@ -16,7 +16,7 @@ a 80/20 chance game to play with friends. IT will be hosted a website where thei
 
 ### Design
 
-![Design image](pageFlowDiagram.png)
+![Design image](pageFlowDiagram.jpg)
 
 Design image is a rough flow diagram of what the page flow and game loop will look like for the enduser.
 
