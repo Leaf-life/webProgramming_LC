@@ -16,9 +16,9 @@ a 80/20 chance game to play with friends. IT will be hosted a website where thei
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](pageFlowDiagram.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Design image is a rough flow diagram of what the page flow and game loop will look like for the enduser.
 
 ```mermaid
 sequenceDiagram
