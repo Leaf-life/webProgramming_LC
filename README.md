@@ -51,6 +51,7 @@ sequenceDiagram
 - simgle player mode where you try to get the high score and get rewards when you get certain milezones.
 - 80/20 game with two buttons. one button is rendomly choosen as the correct button while the other one is choose as the wrong one.
 - score board for single player mode to see who has the highest score.
+- will use apiNija to inject a random joke when the player losses the game.
 
 ### Technologies
 
@@ -59,7 +60,7 @@ I am going to use the required technologies in the following ways.
 - **HTML** - use to structure the website and orgainze the elements
 - **CSS** - added the design and look of the website
 - **React** - routing to the different player modes
-- **Service** - different endpoints to the different pages detmereing their functionality and the elements they should have
+- **Service** - different endpoints to the different pages detmereing their functionality and the elements they should have. Also have an API to inject jokes when the player game overs
 - **DB/Login** - used for scoreboard in single player mode
 - **WebSocket** - mutiplePlay feature for the 80/20 game
 
@@ -81,9 +82,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Rented EC2 server** - I did not complete this part of the deliverable.
-- [ ] **Leased domain name** - I did not complete this part of the deliverable.
-- [ ] **Server accessible** from my domain: [https://yourdomainnamehere.click](https://yourdomainnamehere.click) - I did not complete this part of the deliverable.
+- [x] **Rented EC2 server**
+- [x] **Leased domain name**
+- [x] **Server accessible** from my domain: [https://8020game.online](https://8020game.online)
 
 ## 🚀 HTML deliverable
 
