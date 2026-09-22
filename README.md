@@ -90,16 +90,16 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
+- [x] **HTML pages** - added what I think is all the HTML pages I will need for the project (index, login, signup, scoreBoard, playGameMulti, playGameSingle, modeSelection, help, and gameOver)
+- [x] **Proper HTML element usage** - HTML ussage should be in place
+- [x] **Links** - aded links to navigate between pages, they are next to the buttons because the buttons will eventually be what moves the user between pages
+- [x] **Text** - their is some text in plaec around the website, but will be made more dynamic once we get their
+- [x] **3rd party API placeholder** - place holder is in the game over screen where a joke will be placed
+- [x] **Images** - the title 80/20 and the game over screen will have images, iii do nt have those made yet so they are jsut placeholders of what will be their
+- [x] **Login placeholder** - login/signup html
+- [x] **DB data placeholder** - in scoreboard and signup will also have it
+- [x] **WebSocket placeholder** - will go in the playGameMulti.html file
 
 ## 🚀 CSS deliverable
 
