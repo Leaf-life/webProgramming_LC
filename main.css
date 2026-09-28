@@ -1,7 +1,12 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    background-color: antiquewhite;
+}
+
+header {
+    margin-bottom: 5%;
 }
 
 .title-img {
@@ -18,6 +23,7 @@ body {
 .buttons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -26,11 +32,26 @@ body {
     border-radius: 10px;
     border: none;
     font-size: medium;
-    padding: 3%;
+    padding: 10px;
     background-size: auto;
+}
+
+.templinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 main {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+footer {
+    display: flex;
+    justify-content: end;
 }
