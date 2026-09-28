@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-img {
+    display: flex;
+    justify-content: center;
+}
+
+.title-img img {
+    display: block;
+    width: 25%;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.buttons button {
+    background-color: yellowgreen;
+    border-radius: 10px;
+    border: none;
+    font-size: medium;
+    padding: 3%;
+    background-size: auto;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
