@@ -1,4 +1,4 @@
-# Your startup name here
+*80 20 Game*
 
 [My Notes](notes.md)
 
