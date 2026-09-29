@@ -44,6 +44,10 @@ button {
     cursor: pointer;
 }
 
+body.signup-page button {
+    padding: 10px 18px;
+}
+
 button:hover {
     background-color: coral;
 }
