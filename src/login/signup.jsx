@@ -20,7 +20,7 @@ export function Signup() {
           <input type="password" id="password" name="vPassword" />
         </li>
         <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>Submit</button>
-        <button type="button" className="nav-button" onClick={() => navigate('/login')}>cancel</button>
+        <button type="button" className="nav-button" onClick={() => navigate('/home')}>cancel</button>
       </div>
     </div>
   );

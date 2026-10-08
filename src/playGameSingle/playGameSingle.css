@@ -39,6 +39,34 @@ button {
     cursor: pointer;
 }
 
+.redButton {
+    min-width: 130px;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.greenButton {
+    min-width: 130px;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.redButton:hover {
+    background-color: darkred;
+}
+
+.greenButton:hover {
+    background-color: darkgreen;
+}
+
 button:hover {
     background-color: coral;
 }

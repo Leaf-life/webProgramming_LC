@@ -15,8 +15,8 @@ export function PlayGameMulti() {
       <main>
         <p style={{ color: 'antiquewhite' }}>webSocket goes here</p>
         <div className="buttons">
-          <button type="button">red button</button>
-          <button type="button">green button</button>
+          <button type="button" className="redButton">red button</button>
+          <button type="button" className="greenButton">green button</button>
         </div>
         <div className="buttons" style={{ padding: '2%' }}>
           <button type="button" className="nav-button" onClick={() => navigate('/game-over')}>quit</button>

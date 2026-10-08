@@ -15,7 +15,7 @@ export function Help() {
         <form id="helpForm">
           <label htmlFor="help">Help request</label>
           <textarea id="help" defaultValue="Type Help message here:" />
-          <button type="submit">Submit</button>
+          <button type="submit" className="nav-button">Submit</button>
         </form>
         <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>Go back</button>
       </main>
