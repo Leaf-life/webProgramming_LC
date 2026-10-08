@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 export function Login() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <header>
@@ -16,8 +19,8 @@ export function Login() {
           <label htmlFor="password">Password: </label>
           <input type="password" id="password" name="vPassword" />
         </li>
-        <button type="button" onClick={() => window.location.href = 'modeSelection.html'}>login</button>
-        <button type="button" onClick={() => window.location.href = 'index.html'}>cancel</button>
+        <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>login</button>
+        <button type="button" className="nav-button" onClick={() => navigate('/home')}>cancel</button>
       </div>
     </div>
   );

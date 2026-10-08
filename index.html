@@ -1,29 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>80/20 Game Home</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>80/20 Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-  <header>
-    <div class="flex justify-center">
-      <img src="8020Title.png" alt="80/20 image" class="block h-auto w-1/4">
-    </div>
-  </header>
-
-  <main>
-    <div class = "buttons">
-      <button type="login" onclick="window.location.href='login.html'">Login</button>
-      <button type="signup" onclick="window.location.href='signup.html'">Sign up</button>
-      <button type="scoreBoard" onclick="window.location.href='scoreBoard.html'">Score Board</button>
-      <button type="help" onclick="window.location.href='help.html'">Help Page</button>
-    </div>
-    <!-- <button class="cursor-pointer rounded-[10px] border-0 bg-[yellowgreen] p-[10px] text-base hover:bg-[coral]">Help Page</button> -->
-  </main>
-
-  <footer>
-    <div>Made by Leaf Life Luf</div>
-  </footer>
-</body>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

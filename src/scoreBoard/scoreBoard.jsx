@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './scoreBoard.css';
 
 export function ScoreBoard() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <header>
@@ -17,7 +20,7 @@ export function ScoreBoard() {
             <li>user3 score3</li>
           </ul>
         </section>
-        <button type="button" onClick={() => window.location.href = 'index.html'}>Back</button>
+        <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>Back</button>
       </main>
     </div>
   );

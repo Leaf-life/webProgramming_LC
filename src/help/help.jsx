@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './help.css';
 
 export function Help() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <header>Help</header>
@@ -14,7 +17,7 @@ export function Help() {
           <textarea id="help" defaultValue="Type Help message here:" />
           <button type="submit">Submit</button>
         </form>
-        <button type="button" onClick={() => window.location.href = 'index.html'}>Go back</button>
+        <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>Go back</button>
       </main>
     </div>
   );
