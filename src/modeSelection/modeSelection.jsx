@@ -5,6 +5,11 @@ import './modeSelection.css';
 export function ModeSelection() {
   const navigate = useNavigate();
 
+  function logout() {
+    localStorage.removeItem('userName');
+    navigate('/home')
+  }
+
   return (
     <div>
       <header>
@@ -15,7 +20,7 @@ export function ModeSelection() {
         <button type="button" className="nav-button" onClick={() => navigate('/play-multi')}>multi</button>
         <button type="button" className="nav-button" onClick={() => navigate('/score-board')}>Score Board</button>
         <button type="button" className="nav-button" onClick={() => navigate('/help')}>Help Page</button>
-        <button type="button" className="nav-button" onClick={() => navigate('/home')}>logout</button>
+        <button type="button" className="nav-button" onClick={() => logout()}>logout</button>
       </main>
     </div>
   );
