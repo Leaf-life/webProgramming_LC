@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
+import {AuthState} from './../authState'
 
 export function Login() {
   const navigate = useNavigate();
 
-  function login(){
+  function login({authState}){
     if (localStorage.getItem('userName')){
       navigate('/mode-selection')
+      authState = AuthState.Authenticated
     } else {
       alert('New users need to sign up first')
       // navigate('/signup')

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './scoreBoard.css';
+import {AuthState} from './../authState'
 
-export function ScoreBoard() {
+export function ScoreBoard({authState}) {
   const navigate = useNavigate();
   const [scores, setScores] = React.useState([]);
 
@@ -49,7 +50,7 @@ export function ScoreBoard() {
           </tr>
           <tbody>{scoreRows}</tbody>
         </section>
-        <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>Back</button>
+        <button type="button" className="nav-button" onClick={() => authState === AuthState.Authenticated ? navigate('/mode-selection'): navigate('/home')}>Back</button>
       </main>
     </div>
   );

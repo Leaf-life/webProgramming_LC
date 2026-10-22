@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import {AuthState} from './authState'
 
 import { Home } from './home/home';
 import { Login } from './login/login';
@@ -12,6 +13,7 @@ import { PlayGameMulti } from './playGameMulti/playGameMulti';
 import { GameOver } from './gameOver/gameOver';
 
 export default function App() {
+
   return (
     <BrowserRouter>
       <main>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import {AuthState} from './../authState'
 import './login.css';
 
-export function Signup() {
+export function Signup({authState}) {
   const navigate = useNavigate();
 
   const [userName, setUserName] = React.useState('');
@@ -10,6 +11,7 @@ export function Signup() {
 
   async function createUser() {
     localStorage.setItem('userName', userName);
+    authState = AuthState.Authenticated
     navigate('/mode-selection');
   }
 
