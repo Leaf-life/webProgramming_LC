@@ -1,18 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
-import {AuthState} from './../authState'
+import { AuthState, useAuthState } from './../authState';
 
 export function Login() {
   const navigate = useNavigate();
+  const { setAuthState } = useAuthState();
 
-  function login({authState}){
-    if (localStorage.getItem('userName')){
-      navigate('/mode-selection')
-      authState = AuthState.Authenticated
+  function login() {
+    if (localStorage.getItem('userName')) {
+      setAuthState(AuthState.Authenticated);
+      navigate('/mode-selection');
     } else {
-      alert('New users need to sign up first')
-      // navigate('/signup')
+      alert('New users need to sign up first');
     }
   }
 
@@ -30,7 +30,7 @@ export function Login() {
           <label htmlFor="password">Password: </label>
           <input type="password" id="password" name="vPassword" />
         </li>
-        <button type="button" className="nav-button" onClick={() => login() } >login</button>
+        <button type="button" className="nav-button" onClick={login}>login</button>
         <button type="button" className="nav-button" onClick={() => navigate('/home')}>cancel</button>
       </div>
     </div>

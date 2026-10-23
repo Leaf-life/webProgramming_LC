@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthState, useAuthState } from './../authState';
 import './scoreBoard.css';
 
 export function ScoreBoard() {
   const navigate = useNavigate();
+  const { authState } = useAuthState();
   const [scores] = React.useState(() => {
     const scoresText = localStorage.getItem('scores');
     if (!scoresText) {
@@ -61,7 +63,7 @@ export function ScoreBoard() {
         <button
           type="button"
           className="nav-button"
-          onClick={() => navigate(localStorage.getItem('userName') ? '/mode-selection' : '/home')}
+          onClick={() => navigate(authState === AuthState.Authenticated ? '/mode-selection' : '/home')}
         >
           Back
         </button>

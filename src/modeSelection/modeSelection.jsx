@@ -1,13 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthState, useAuthState } from './../authState';
 import './modeSelection.css';
 
 export function ModeSelection() {
   const navigate = useNavigate();
+  const { setAuthState } = useAuthState();
 
   function logout() {
     localStorage.removeItem('userName');
-    navigate('/home')
+    setAuthState(AuthState.Unauthenticated);
+    navigate('/home');
   }
 
   return (

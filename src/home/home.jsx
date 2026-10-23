@@ -1,12 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './main.css'
-import { AuthState } from './../authState'
 
-export function Home({authState}) {
+export function Home() {
   const navigate = useNavigate();
 
-  authState = AuthState.Unauthenticated
   return (
     <div>
       <header>
