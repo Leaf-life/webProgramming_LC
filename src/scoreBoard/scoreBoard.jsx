@@ -1,38 +1,31 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './scoreBoard.css';
-import {AuthState} from './../authState'
 
-export function ScoreBoard({authState}) {
+export function ScoreBoard() {
   const navigate = useNavigate();
-  const [scores, setScores] = React.useState([]);
-
-  React.useEffect(() => {
-    const scoresText = localStorage.getItem('scores')
-    if (scoresText) {
-      setScores(JSON.parse(scoresText))
+  const [scores] = React.useState(() => {
+    const scoresText = localStorage.getItem('scores');
+    if (!scoresText) {
+      return [];
     }
-  }, []);
 
-  const scoreRows = [];
-  if (scores.length) {
-    for (const [i, score] of scores.entries()) {
-      scoreRows.push(
-        <tr key={i}>
-          <td>{i}</td>
-          <td>{score.name.split('@')[0]}</td>
-          <td>{score.score}</td>
-          <td>{score.date}</td>
-        </tr>
+    try {
+      const parsedScores = JSON.parse(scoresText);
+      if (!Array.isArray(parsedScores)) {
+        console.error('Saved scores are not an array.');
+        return [];
+      }
+
+      return parsedScores.filter((score) =>
+        score && typeof score.name === 'string' && Number.isFinite(score.score)
       );
+    } catch (error) {
+      console.error('Unable to parse saved scores.', error);
+      return [];
     }
-  }else {
-    scoreRows.push(
-      <tr key='0'>
-        <td colSpan='4'>Be the first to score</td>
-      </tr>
-    );
-  }
+  });
+  const sortedScores = [...scores].sort((a, b) => b.score - a.score);
 
   return (
     <div>
@@ -41,16 +34,37 @@ export function ScoreBoard({authState}) {
       </header>
 
       <main>
-        <p>database for the stored scores will go here</p>
         <section>
-          <tr>
-            <li>user1 score1</li>
-            <li>user2 score2</li>
-            <li>user3 score3</li>
-          </tr>
-          <tbody>{scoreRows}</tbody>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Player</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedScores.length ? sortedScores.map((score, index) => (
+                <tr key={`${score.name}-${index}`}>
+                  <td>{index + 1}</td>
+                  <td>{score.name.split('@')[0]}</td>
+                  <td>{score.score}</td>
+                </tr>
+              )) : (
+                <tr>
+                  <td colSpan="3">Be the first to score</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </section>
-        <button type="button" className="nav-button" onClick={() => authState === AuthState.Authenticated ? navigate('/mode-selection'): navigate('/home')}>Back</button>
+        <button
+          type="button"
+          className="nav-button"
+          onClick={() => navigate(localStorage.getItem('userName') ? '/mode-selection' : '/home')}
+        >
+          Back
+        </button>
       </main>
     </div>
   );

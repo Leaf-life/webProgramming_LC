@@ -25,15 +25,20 @@ section {
     width: 100%;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
 }
 
-li {
+th,
+td {
     padding: 12px 16px;
     border-bottom: 2px solid yellowgreen;
+}
+
+td[colspan="3"] {
+    text-align: center;
 }
 
 button {

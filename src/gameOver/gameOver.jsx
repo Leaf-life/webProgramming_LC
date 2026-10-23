@@ -10,7 +10,6 @@ export function GameOver() {
       <header><img src="GameOver.jpg" alt="game over image" /></header>
       <main>
         <p>API message goes here</p>
-        <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>Play Again</button>
         <button type="button" className="nav-button" onClick={() => navigate('/mode-selection')}>Return Home</button>
       </main>
     </div>

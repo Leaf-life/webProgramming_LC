@@ -59,12 +59,54 @@ button {
     cursor: pointer;
 }
 
+.blueButton {
+    min-width: 130px;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.purpleButton {
+    min-width: 130px;
+    background-color: purple;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.yellowButton {
+    min-width: 130px;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
 .redButton:hover {
     background-color: darkred;
 }
 
 .greenButton:hover {
     background-color: darkgreen;
+}
+
+.blueButton:hover {
+    background-color: darkblue;
+}
+
+.purpleButton:hover {
+    background-color: rebeccapurple;
+}
+
+.yellowButton:hover {
+    background-color: goldenrod;
 }
 
 button:hover {
