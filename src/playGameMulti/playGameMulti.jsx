@@ -4,6 +4,7 @@ import './playGameMulti.css';
 
 export function PlayGameMulti() {
   const navigate = useNavigate();
+  const userName = localStorage.getItem('userName');
   const [score, setScore] = React.useState(0);
 
   function getRandomButton() {
@@ -26,6 +27,11 @@ export function PlayGameMulti() {
 }
 
   function gameOver() {
+    if (!userName) {
+      navigate('/login');
+      return;
+    }
+
     saveScore()
     navigate('/game-over');
   }

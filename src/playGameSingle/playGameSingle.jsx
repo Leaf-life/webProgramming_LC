@@ -4,6 +4,7 @@ import './playGameSingle.css';
 
 export function PlayGameSingle() {
   const navigate = useNavigate();
+  const userName = localStorage.getItem('userName');
   const [score, setScore] = React.useState(0);
   const [selectedButton, setSelectedButton] = React.useState(() => getRandomButton());
 
@@ -21,12 +22,14 @@ export function PlayGameSingle() {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newScore),
     });
-
-    // Let other players know the game has concluded
-    GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
 }
 
   function gameOver() {
+    if (!userName) {
+      navigate('/login');
+      return;
+    }
+
     saveScore()
     navigate('/game-over');
   }

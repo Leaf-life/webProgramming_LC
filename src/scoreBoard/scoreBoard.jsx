@@ -7,12 +7,18 @@ export function ScoreBoard() {
   const navigate = useNavigate();
   const { authState } = useAuthState();
   const [scores, setScores] = React.useState([]);
+  const [scoresError, setScoresError] = React.useState('');
 
   React.useEffect(() => {
     fetch('/api/scores')
-      .then((response) => {
+      .then(async (response) => {
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+          throw new Error('The scores API returned a non-JSON response. Check that the API server is running and that the app is using the configured Vite server.');
+        }
         if (!response.ok) {
-          throw new Error(`Unable to fetch scores: ${response.status}`);
+          const body = await response.json();
+          throw new Error(body.msg || `Unable to fetch scores: ${response.status}`);
         }
         return response.json();
       })
@@ -29,6 +35,7 @@ export function ScoreBoard() {
       })
       .catch((error) => {
         console.error('Unable to fetch scores.', error);
+        setScoresError(error.message);
         setScores([]);
       });
   }, []);
@@ -52,7 +59,11 @@ export function ScoreBoard() {
               </tr>
             </thead>
             <tbody>
-              {sortedScores.length ? sortedScores.map((score, index) => (
+              {scoresError ? (
+                <tr>
+                  <td colSpan="3">{scoresError}</td>
+                </tr>
+              ) : sortedScores.length ? sortedScores.map((score, index) => (
                 <tr key={`${score.name}-${index}`}>
                   <td>{index + 1}</td>
                   <td>{score.name.split('@')[0]}</td>
