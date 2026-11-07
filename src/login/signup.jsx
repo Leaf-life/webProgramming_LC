@@ -40,7 +40,7 @@ export function Signup() {
   }
 
   return (
-    <div>
+    <div className="signup-page">
       <header>
         <p>Sign Up</p>
       </header>

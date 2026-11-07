@@ -44,7 +44,7 @@ button {
     cursor: pointer;
 }
 
-body.signup-page button {
+.signup-page button {
     padding: 10px 18px;
 }
 
