@@ -12,26 +12,21 @@ export function PlayGameMulti() {
 
   const [selectedButton, setSelectedButton] = React.useState(() => getRandomButton());
 
+  async function saveScore() {
+    const newScore = { name: userName, score};
+
+    await fetch('/api/score', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newScore),
+    });
+
+    // Let other players know the game has concluded
+    GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
+}
+
   function gameOver() {
-    const userScore = {
-      name: localStorage.getItem('userName') || 'Unknown',
-      score,
-    };
-    const scoresText = localStorage.getItem('scores');
-    let previousScores = [];
-
-    if (scoresText) {
-      try {
-        const parsedScores = JSON.parse(scoresText);
-        if (Array.isArray(parsedScores)) {
-          previousScores = parsedScores;
-        }
-      } catch (error) {
-        console.error('Unable to read saved scores; starting a new score list.', error);
-      }
-    }
-
-    localStorage.setItem('scores', JSON.stringify([...previousScores, userScore]));
+    saveScore()
     navigate('/game-over');
   }
 

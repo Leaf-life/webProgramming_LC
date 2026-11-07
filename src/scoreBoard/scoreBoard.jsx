@@ -6,27 +6,33 @@ import './scoreBoard.css';
 export function ScoreBoard() {
   const navigate = useNavigate();
   const { authState } = useAuthState();
-  const [scores] = React.useState(() => {
-    const scoresText = localStorage.getItem('scores');
-    if (!scoresText) {
-      return [];
-    }
+  const [scores, setScores] = React.useState([]);
 
-    try {
-      const parsedScores = JSON.parse(scoresText);
-      if (!Array.isArray(parsedScores)) {
-        console.error('Saved scores are not an array.');
-        return [];
-      }
+  React.useEffect(() => {
+    fetch('/api/scores')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Unable to fetch scores: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((receivedScores) => {
+        if (!Array.isArray(receivedScores)) {
+          console.error('Received scores are not an array.');
+          setScores([]);
+          return;
+        }
 
-      return parsedScores.filter((score) =>
-        score && typeof score.name === 'string' && Number.isFinite(score.score)
-      );
-    } catch (error) {
-      console.error('Unable to parse saved scores.', error);
-      return [];
-    }
-  });
+        setScores(receivedScores.filter((score) =>
+          score && typeof score.name === 'string' && Number.isFinite(score.score)
+        ));
+      })
+      .catch((error) => {
+        console.error('Unable to fetch scores.', error);
+        setScores([]);
+      });
+  }, []);
+
   const sortedScores = [...scores].sort((a, b) => b.score - a.score);
 
   return (
