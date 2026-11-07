@@ -9,11 +9,34 @@ export function Signup() {
 
   const [userName, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [error, setError] = React.useState('');
 
-  async function createUser() {
-    localStorage.setItem('userName', userName);
-    setAuthState(AuthState.Authenticated);
-    navigate('/mode-selection');
+  async function createUser(event) {
+    event.preventDefault();
+    setError('');
+
+    try {
+      const response = await fetch('/api/auth/create', {
+        method: 'post',
+        body: JSON.stringify({ email: userName, password }),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      });
+
+      if (!response.ok) {
+        const body = await response.json();
+        setError(body.msg || 'Unable to create account.');
+        return;
+      }
+
+      localStorage.setItem('userName', userName);
+      setAuthState(AuthState.Authenticated);
+      navigate('/mode-selection');
+    } catch (requestError) {
+      console.error('Unable to create account.', requestError);
+      setError('Unable to create account. Please try again.');
+    }
   }
 
   return (
@@ -21,18 +44,33 @@ export function Signup() {
       <header>
         <p>Sign Up</p>
       </header>
-      <div>
+      <form onSubmit={createUser}>
         <li>
           <label htmlFor="email">Email: </label>
-          <input type="email" id="email" name="vEmail" onChange={(e) => setUserName(e.target.value)} />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={userName}
+            onChange={(event) => setUserName(event.target.value)}
+            required
+          />
         </li>
         <li>
           <label htmlFor="password">Password: </label>
-          <input type="password" id="password" name="vPassword" onChange={(e) => setPassword(e.target.value)} />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            required
+          />
         </li>
-        <button type="button" className="nav-button" onClick={() => createUser()} disabled={!userName || !password}>Submit</button>
+        {error && <p role="alert">{error}</p>}
+        <button type="submit" className="nav-button">Submit</button>
         <button type="button" className="nav-button" onClick={() => navigate('/home')}>cancel</button>
-      </div>
+      </form>
     </div>
   );
 }
