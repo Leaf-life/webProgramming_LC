@@ -135,13 +135,13 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
-- [ ] **Uses BCrypt to hash passwords** - I did not complete this part of the deliverable.
+- [x] **Node.js/Express HTTP service** - update file with index file
+- [x] **Static middleware for frontend** - everything is routed through the index file for the request
+- [x] **Calls to third party endpoints** - calls dadjoke api
+- [x] **Backend service endpoints** - has endpoints for auth and scores
+- [x] **Frontend calls service endpoints** - calls endpoints for auth and scores
+- [x] **Supports registration, login, logout, and restricted endpoint** - yes endpoitns are restricted when approperate
+- [x] **Uses BCrypt to hash passwords** - they are encrypted
 
 ## 🚀 DB deliverable
 
