@@ -46,6 +46,29 @@ apiRouter.post('/auth/login', async (req, res) => {
   res.status(401).send({ msg: 'Unauthorized' });
 });
 
+apiRouter.get('/dad-joke', async (_req, res, next) => {
+  try {
+    const response = await fetch('https://api.api-ninjas.com/v1/dadjokes', {
+      headers: { 'X-Api-Key': 'Jr8qaa81D1yvibUHXjkiojrTZyYt9vnqbRz96BqJ' },
+    });
+    if (!response.ok) {
+      res.status(502).send({ msg: 'Dad joke service request failed' });
+      return;
+    }
+
+    const jokes = await response.json();
+    const joke = Array.isArray(jokes) ? jokes[0]?.joke : undefined;
+    if (typeof joke !== 'string') {
+      res.status(502).send({ msg: 'Dad joke service returned an invalid response' });
+      return;
+    }
+
+    res.send({ joke });
+  } catch (error) {
+    next(error);
+  }
+});
+
 // DeleteAuth logout a user
 apiRouter.delete('/auth/logout', async (req, res) => {
   const user = await findUser('token', req.cookies[authCookieName]);
@@ -131,7 +154,7 @@ async function findUser(field, value) {
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
-    secure: true,
+    secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
     sameSite: 'strict',
   });
