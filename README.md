@@ -147,9 +147,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
+- [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
+- [x] **Stores data in MongoDB** - Data is propreded stored in mongoDB witht he database file
+- [x] **Stores credentials in MongoDB** - credentails are stored and file is added in the gitignore so that credentails are not likied to the public
 
 ## 🚀 WebSocket deliverable
 
