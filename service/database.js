@@ -13,7 +13,7 @@ const scoreCollection = db.collection('score');
     await db.command({ ping: 1 });
     console.log(`Connect to database`);
   } catch (ex) {
-    console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+    console.log(`Unable to connect to database with ${url.slice(-4)} because ${ex.message}`);
     process.exit(1);
   }
 })();
